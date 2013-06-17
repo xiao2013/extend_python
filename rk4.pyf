@@ -1,0 +1,22 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module rk4 ! in 
+    interface  ! in :rk4
+        subroutine rk4(t,tstep,y,n) ! in :rk4:rk4.f
+            real*8, intent(in) :: t
+            real*8, intent(in) :: tstep
+            real*8 dimension(n), intent(inout), depend(n) :: y
+            integer intent(in) :: n
+        end subroutine rk4
+        function deriv(t,temp,i) ! in :rk4:rk4.f
+            real*8 :: t
+            real*8 dimension(5) :: temp
+            integer :: i
+            real*8 :: deriv
+        end function deriv
+    end interface 
+end python module rk4
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
